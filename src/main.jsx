@@ -1,16 +1,16 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Imports
+// ---------------------------------------------------------------------------------------------------------------------
 import {StrictMode} from 'react'
 import {createRoot} from 'react-dom/client'
 import {siInstagram} from 'simple-icons'
 import './styles.css'
+import {SocialLink} from "./socialLink.jsx";
+import {SocialIcon} from "./socialIcon.jsx";
 
-function SocialIcon({path, viewBox = '0 0 24 24'}) {
-    return (
-        <svg className="size-5 fill-current" viewBox={viewBox} aria-hidden="true">
-            <path d={path}/>
-        </svg>
-    )
-}
-
+// ---------------------------------------------------------------------------------------------------------------------
+// Code
+// ---------------------------------------------------------------------------------------------------------------------
 function App() {
     const currentYear = new Date().getFullYear()
 
@@ -64,8 +64,8 @@ function App() {
             <section className="mx-auto max-w-310 border-t border-white/10 px-5.5 pb-18.75 pt-6.25 sm:px-10.5 sm:pb-25" aria-label="Social links">
                 <div className="flex justify-between text-[10px] uppercase tracking-[.16em] text-[#a99991]"><span className="text-[#c11d35]">Find us</span><span>Follow the story</span></div>
                 <div className="mt-11.25 grid grid-cols-1 gap-4 sm:mt-15.5 sm:grid-cols-2">
-                    <a className="group flex items-center justify-between border-b border-white/15 pb-4 text-2xl font-serif text-[#e8ded5] transition-colors hover:border-[#c11d35] hover:text-[#c11d35]" href="https://www.instagram.com/" target="_blank" rel="noreferrer"><span className="flex items-center gap-3"><SocialIcon path={siInstagram.path}/>Instagram</span><span className="text-base transition-transform group-hover:translate-x-1">↗</span></a>
-                    <a className="group flex items-center justify-between border-b border-white/15 pb-4 text-2xl font-serif text-[#e8ded5] transition-colors hover:border-[#c11d35] hover:text-[#c11d35]" href="https://fetlife.com/" target="_blank" rel="noreferrer"><span className="flex items-center gap-6"><img className="size-5" src={`${import.meta.env.BASE_URL}fetlife.svg`} alt=""/>FetLife</span><span className="text-base transition-transform group-hover:translate-x-1">↗</span></a>
+                    <SocialLink href="https://www.instagram.com/" label="Instagram"><SocialIcon path={siInstagram.path}/></SocialLink>
+                    <SocialLink href="https://fetlife.com/" label="FetLife"><SocialIcon src={`${import.meta.env.BASE_URL}fetlife.svg`}/></SocialLink>
                 </div>
                 <p className="mt-6 text-[10px] text-[#a99991]">FetLife® is a registered trademark of BitLove.</p>
             </section>
