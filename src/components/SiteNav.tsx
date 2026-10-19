@@ -6,15 +6,15 @@ import {HERO_SECTION_ID} from './Hero'
 import {languageLabels, languageOptions} from '../i18n/translations'
 import type {Language, Translation} from '../i18n/translations'
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Code
+// ---------------------------------------------------------------------------------------------------------------------
 type SiteNavProps = {
     language: Language
     setLanguage: (language: Language) => void
     t: Translation
 }
 
-// ---------------------------------------------------------------------------------------------------------------------
-// Code
-// ---------------------------------------------------------------------------------------------------------------------
 export function SiteNav({language, setLanguage, t}: SiteNavProps) {
     return (
         <nav
