@@ -23,8 +23,10 @@ function App() {
         window.localStorage.setItem('scarlet-oath-language', language)
 
         const query = new URLSearchParams(window.location.search)
-        query.set('lang', language)
-        const nextUrl = `${window.location.pathname}?${query.toString()}${window.location.hash}`
+        if (language === 'en') query.delete('lang')
+        else query.set('lang', language)
+        const queryString = query.toString()
+        const nextUrl = `${window.location.pathname}${queryString ? `?${queryString}` : ''}${window.location.hash}`
         window.history.replaceState(null, '', nextUrl)
     }, [language])
 
