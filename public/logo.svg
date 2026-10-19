@@ -1,0 +1,14 @@
+<svg width="560" height="680" viewBox="0 0 560 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="560" height="680" fill="#0B0A0B"/>
+  <path d="M280 28L467 137V355L280 464L93 355V137L280 28Z" stroke="#AC172A" stroke-width="16"/>
+  <path d="M280 28L467 137V355L280 464L93 355V137L280 28Z" stroke="url(#fade)" stroke-width="16"/>
+  <path d="M255 84L133 155V228L280 315V418L165 351V280L133 261V370L285 458V313L165 243V173L255 121V84Z" fill="#B81730"/>
+  <path d="M303 97V144L364 180C369 183 372 188 372 194V327C372 333 369 338 364 341L349 350V397L390 373C407 363 416 345 416 326V173C416 151 405 132 386 121L325 86C315 80 303 87 303 97Z" fill="#E8DED5"/>
+  <text x="280" y="555" fill="#B81730" font-family="Georgia, serif" font-size="82" font-weight="700" text-anchor="middle">Scarlet</text>
+  <text x="280" y="632" fill="#E8DED5" font-family="Georgia, serif" font-size="82" font-weight="700" text-anchor="middle">Oath</text>
+  <defs>
+    <linearGradient id="fade" x1="280" y1="22" x2="280" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C51B34"/><stop offset="1" stop-color="#60101B"/>
+    </linearGradient>
+  </defs>
+</svg>
