@@ -1,14 +1,34 @@
-<svg width="560" height="680" viewBox="0 0 560 680" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="560" height="680" fill="#0B0A0B"/>
-  <path d="M280 28L467 137V355L280 464L93 355V137L280 28Z" stroke="#AC172A" stroke-width="16"/>
-  <path d="M280 28L467 137V355L280 464L93 355V137L280 28Z" stroke="url(#fade)" stroke-width="16"/>
-  <path d="M255 84L133 155V228L280 315V418L165 351V280L133 261V370L285 458V313L165 243V173L255 121V84Z" fill="#B81730"/>
-  <path d="M303 97V144L364 180C369 183 372 188 372 194V327C372 333 369 338 364 341L349 350V397L390 373C407 363 416 345 416 326V173C416 151 405 132 386 121L325 86C315 80 303 87 303 97Z" fill="#E8DED5"/>
-  <text x="280" y="555" fill="#B81730" font-family="Georgia, serif" font-size="82" font-weight="700" text-anchor="middle">Scarlet</text>
-  <text x="280" y="632" fill="#E8DED5" font-family="Georgia, serif" font-size="82" font-weight="700" text-anchor="middle">Oath</text>
-  <defs>
-    <linearGradient id="fade" x1="280" y1="22" x2="280" y2="470" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#C51B34"/><stop offset="1" stop-color="#60101B"/>
-    </linearGradient>
-  </defs>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 94.6 116.84">
+    <defs>
+        <linearGradient id="scarlet-gradient" x1="47.3" y1="0" x2="47.3" y2="116.84" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#c51b34"/>
+            <stop offset="1" stop-color="#5e101b"/>
+        </linearGradient>
+        <style>
+            .cls-1 {
+            fill: #e7dbd1;
+            }
+
+            .cls-2 {
+            fill: #a81626;
+            }
+
+            .hexagon {
+            fill: url(#scarlet-gradient);
+            }
+        </style>
+    </defs>
+    <g id="Layer_1-2" data-name="Layer 1">
+        <g>
+            <polygon class="cls-2"
+                     points="42.76 80.24 42.76 101.91 11.55 83.89 11.55 62.22 19.73 66.94 19.73 79.37 34.58 87.94 34.58 75.52 42.76 80.24"/>
+            <polygon class="cls-2"
+                     points="59.12 70.79 59.12 97.19 50.94 101.91 50.94 75.52 11.55 52.77 11.55 33.88 42.76 15.86 42.76 34.75 34.58 39.47 34.58 30.03 19.73 38.6 19.73 48.05 59.12 70.79"/>
+            <path class="cls-1"
+                  d="M78.09,86.24c-3.7,2.14-8.12,4.69-10.78,6.22v-6.35c0-1.79.95-3.44,2.5-4.33l2.93-1.69c.77-.45,1.25-1.27,1.25-2.17v-37.87c0-.89-.48-1.72-1.25-2.17l-11.62-6.71c-.88-.51-1.99.13-1.99,1.15v29.03l-5.68-3.28c-1.55-.89-2.5-2.54-2.5-4.33v-29.84c0-3.58,3.87-5.81,6.96-4.02,2.27,1.31,4.8,2.78,7.12,4.11,4.58,2.65,9.37,5.41,12.83,7.41,2.66,1.54,4.3,4.38,4.3,7.45v40.33c0,2.91-1.55,5.59-4.07,7.05Z"/>
+        </g>
+        <path class="hexagon"
+              d="M47.3,4.62l43.3,25v57.61l-43.3,25L4,87.22V29.62L47.3,4.62h0ZM47.3,0l-2,1.15L2,26.15l-2,1.15v62.22l2,1.15,43.3,25,2,1.15,2-1.15,43.3-25,2-1.15V27.31l-2-1.15L49.3,1.15,47.3,0h0Z"/>
+    </g>
 </svg>
