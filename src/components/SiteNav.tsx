@@ -2,6 +2,7 @@
 // Imports
 // ---------------------------------------------------------------------------------------------------------------------
 import {LanguagePicker} from './LanguagePicker'
+import {HERO_SECTION_ID} from './Hero'
 import {languageLabels, languageOptions} from '../i18n/translations'
 import type {Language, Translation} from '../i18n/translations'
 
@@ -22,7 +23,7 @@ export function SiteNav({language, setLanguage, t}: SiteNavProps) {
         >
             <a
                 className="flex items-center gap-3 text-[13px] font-bold uppercase tracking-[.04em]"
-                href="#top"
+                href={`#${HERO_SECTION_ID}`}
                 aria-label={t.homeLabel}
             >
                 <img className="block h-9 w-auto" src={`${import.meta.env.BASE_URL}logo.svg`} alt="" />

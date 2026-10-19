@@ -9,11 +9,14 @@ import type {Translation} from '../i18n/translations'
 type HeroProps = {
     t: Translation
 }
+
+export const HERO_SECTION_ID = 'top'
+
 export function Hero({t}: HeroProps) {
     return (
         <section
             className="mx-auto grid min-h-auto max-w-310 grid-cols-1 items-center gap-8 px-5.5 pb-22.5 pt-18.75 sm:grid-cols-2 sm:gap-[7%] sm:px-10.5 sm:pt-15"
-            id="top"
+            id={HERO_SECTION_ID}
         >
             <div className="order-2 self-start sm:order-0 sm:self-auto">
                 <p className="mb-8.5 flex items-center text-[11px] uppercase tracking-[.12em] text-[#a99991]">
