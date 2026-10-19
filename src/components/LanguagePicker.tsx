@@ -22,9 +22,9 @@ export function LanguagePicker({language, options, labels, onChange}: LanguagePi
     const pickerRef = useRef<HTMLDivElement>(null)
     const triggerRef = useRef<HTMLButtonElement>(null)
     const activeOptionRef = useRef<HTMLButtonElement>(null)
-    const uid = useId()
-    const listboxId = `${uid}-listbox`
-    const optionId = (index: number) => `${uid}-option-${index}`
+    const id = useId()
+    const listboxId = `${id}-listbox`
+    const optionId = (index: number) => `${id}-option-${index}`
 
     if (prevLanguage !== language) {
         setPrevLanguage(language)

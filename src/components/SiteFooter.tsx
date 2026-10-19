@@ -1,6 +1,7 @@
 // ---------------------------------------------------------------------------------------------------------------------
 // Imports
 // ---------------------------------------------------------------------------------------------------------------------
+import {useState} from 'react'
 import type {Translation} from '../i18n/translations'
 // ---------------------------------------------------------------------------------------------------------------------
 // Code
@@ -10,7 +11,7 @@ type SiteFooterProps = {
 }
 
 export function SiteFooter({t}: SiteFooterProps) {
-    const currentYear = new Date().getFullYear()
+    const [currentYear] = useState(() => new Date().getFullYear())
 
     return (
         <footer className="mx-auto flex max-w-310 flex-col gap-3.75 border-t border-white/10 px-5.5 py-6.25 text-[11px] uppercase tracking-widest text-[#a99991] sm:flex-row sm:items-center sm:justify-between sm:px-10.5 sm:pb-9.5">

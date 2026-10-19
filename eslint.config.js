@@ -1,8 +1,8 @@
 import js from '@eslint/js'
 import tseslint from 'typescript-eslint'
-import react from 'eslint-plugin-react'
+import eslintReact from '@eslint-react/eslint-plugin'
 import reactHooks from 'eslint-plugin-react-hooks'
-import jsxA11y from 'eslint-plugin-jsx-a11y'
+import jsxA11yX from 'eslint-plugin-jsx-a11y-x'
 import prettierConfig from 'eslint-config-prettier'
 import globals from 'globals'
 
@@ -25,18 +25,7 @@ export default tseslint.config(
     ...tseslint.configs.recommended,
     {
         files,
-        plugins: {
-            react,
-        },
-        settings: {
-            react: {
-                version: 'detect',
-            },
-        },
-        rules: {
-            ...react.configs.flat.recommended.rules,
-            ...react.configs.flat['jsx-runtime'].rules,
-        },
+        ...eslintReact.configs['recommended-typescript'],
     },
     {
         files,
@@ -44,7 +33,11 @@ export default tseslint.config(
     },
     {
         files,
-        ...jsxA11y.flatConfigs.recommended,
+        ...eslintReact.configs['disable-conflict-eslint-plugin-react-hooks'],
+    },
+    {
+        files,
+        ...jsxA11yX.configs.recommended,
     },
     {
         files,
