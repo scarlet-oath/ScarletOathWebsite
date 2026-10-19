@@ -1,9 +1,15 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Imports
+// ---------------------------------------------------------------------------------------------------------------------
 import {describe, it, expect, vi} from 'vitest'
 import {fireEvent, render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import {LanguagePicker} from './LanguagePicker'
 import type {Language} from '../i18n/translations'
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Code
+// ---------------------------------------------------------------------------------------------------------------------
 const options = ['en', 'nl', 'fr', 'de'] as const
 
 const labels: Record<Language, string> = {

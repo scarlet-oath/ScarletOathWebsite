@@ -1,7 +1,13 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Imports
+// ---------------------------------------------------------------------------------------------------------------------
 import {useEffect, useState} from 'react'
 import {getInitialLanguage, translations} from '../i18n/translations'
 import type {Language, Translation} from '../i18n/translations'
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Code
+// ---------------------------------------------------------------------------------------------------------------------
 export function useLanguage(): {language: Language; setLanguage: (language: Language) => void; t: Translation} {
     const [language, setLanguage] = useState<Language>(getInitialLanguage)
 

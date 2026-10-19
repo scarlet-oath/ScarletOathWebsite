@@ -1,3 +1,6 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Imports
+// ---------------------------------------------------------------------------------------------------------------------
 import {useLanguage} from './hooks/useLanguage'
 import {SiteNav} from './components/SiteNav'
 import {Hero} from './components/Hero'
@@ -5,6 +8,9 @@ import {LaunchSection} from './components/LaunchSection'
 import {SocialSection} from './components/SocialSection'
 import {SiteFooter} from './components/SiteFooter'
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Code
+// ---------------------------------------------------------------------------------------------------------------------
 export function App() {
     const {language, setLanguage, t} = useLanguage()
 

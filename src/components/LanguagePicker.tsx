@@ -1,7 +1,13 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Imports
+// ---------------------------------------------------------------------------------------------------------------------
 import {useEffect, useId, useRef, useState} from 'react'
 import type {KeyboardEvent as ReactKeyboardEvent} from 'react'
 import type {Language} from '../i18n/translations'
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Code
+// ---------------------------------------------------------------------------------------------------------------------
 type LanguagePickerProps = {
     language: Language
     options: readonly Language[]
@@ -108,7 +114,7 @@ export function LanguagePicker({language, options, labels, onChange}: LanguagePi
     return (
         <div className="relative" ref={pickerRef}>
             <button
-                className="flex min-w-[68px] items-center justify-between gap-3 border border-[#5a353b] bg-[#12090b] px-3 py-2 text-xs font-medium uppercase tracking-[.12em] text-[#e8ded5] transition-colors hover:border-[#c11d35]"
+                className="flex min-w-17 items-center justify-between gap-3 border border-[#5a353b] bg-[#12090b] px-3 py-2 text-xs font-medium uppercase tracking-[.12em] text-[#e8ded5] transition-colors hover:border-[#c11d35]"
                 type="button"
                 role="combobox"
                 aria-expanded={isOpen}

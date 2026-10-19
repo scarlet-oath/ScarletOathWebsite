@@ -1,3 +1,6 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Imports
+// ---------------------------------------------------------------------------------------------------------------------
 import {LanguagePicker} from './LanguagePicker'
 import {languageLabels, languageOptions} from '../i18n/translations'
 import type {Language, Translation} from '../i18n/translations'
@@ -8,6 +11,9 @@ type SiteNavProps = {
     t: Translation
 }
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Code
+// ---------------------------------------------------------------------------------------------------------------------
 export function SiteNav({language, setLanguage, t}: SiteNavProps) {
     return (
         <nav

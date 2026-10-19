@@ -1,7 +1,13 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Imports
+// ---------------------------------------------------------------------------------------------------------------------
 import {describe, it, expect, beforeEach, afterEach} from 'vitest'
 import {getInitialLanguage, languageLabels, languageOptions, translations} from './translations'
 import type {Translation} from './translations'
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Code
+// ---------------------------------------------------------------------------------------------------------------------
 const translationKeys: Array<keyof Translation> = [
     'languageName',
     'comingSoon',
