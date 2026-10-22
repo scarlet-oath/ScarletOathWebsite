@@ -27,13 +27,7 @@ const pickerLabels = {
 function renderPicker(language: Language = 'en') {
     const onChange = vi.fn()
     render(
-        <LanguagePicker
-            language={language}
-            options={options}
-            labels={labels}
-            {...pickerLabels}
-            onChange={onChange}
-        />,
+        <LanguagePicker language={language} options={options} labels={labels} {...pickerLabels} onChange={onChange} />,
     )
     const trigger = screen.getByRole('combobox', {name: pickerLabels.selectionLabel})
     return {trigger, onChange}
