@@ -12,24 +12,27 @@ type LanguagePickerProps = {
     language: Language
     options: readonly Language[]
     labels: Record<Language, string>
+    selectionLabel: string
+    optionsLabel: string
     onChange: (language: Language) => void
 }
 
-export function LanguagePicker({language, options, labels, onChange}: LanguagePickerProps) {
+export function LanguagePicker({
+    language,
+    options,
+    labels,
+    selectionLabel,
+    optionsLabel,
+    onChange,
+}: LanguagePickerProps) {
     const [isOpen, setIsOpen] = useState(false)
     const [activeIndex, setActiveIndex] = useState(() => options.indexOf(language))
-    const [prevLanguage, setPrevLanguage] = useState(language)
     const pickerRef = useRef<HTMLDivElement>(null)
     const triggerRef = useRef<HTMLButtonElement>(null)
-    const activeOptionRef = useRef<HTMLButtonElement>(null)
+    const activeOptionRef = useRef<HTMLDivElement>(null)
     const id = useId()
     const listboxId = `${id}-listbox`
     const optionId = (index: number) => `${id}-option-${index}`
-
-    if (prevLanguage !== language) {
-        setPrevLanguage(language)
-        setActiveIndex(options.indexOf(language))
-    }
 
     useEffect(() => {
         if (!isOpen) return
@@ -120,7 +123,7 @@ export function LanguagePicker({language, options, labels, onChange}: LanguagePi
                 aria-expanded={isOpen}
                 aria-controls={isOpen ? listboxId : undefined}
                 aria-haspopup="listbox"
-                aria-label="Language selection"
+                aria-label={selectionLabel}
                 aria-activedescendant={isOpen ? optionId(activeIndex) : undefined}
                 ref={triggerRef}
                 onClick={() => setIsOpen((open) => !open)}
@@ -138,25 +141,27 @@ export function LanguagePicker({language, options, labels, onChange}: LanguagePi
                     className="absolute right-0 z-30 mt-2 min-w-full overflow-hidden border border-[#5a353b] bg-[#12090b] p-1 shadow-[0_12px_30px_rgba(0,0,0,.45)]"
                     role="listbox"
                     id={listboxId}
-                    aria-label="Language options"
+                    aria-label={optionsLabel}
                 >
                     {options.map((option, index) => (
-                        <button
+                        <div
                             className={`block w-full px-3 py-2 text-left text-[10px] uppercase tracking-[.12em] transition-colors ${language === option ? 'bg-[#5e101b] text-[#e8ded5]' : activeIndex === index ? 'bg-[#2a1116] text-[#e8ded5] hover:bg-[#2a1116] hover:text-[#e8ded5]' : 'text-[#a99991] hover:bg-[#2a1116] hover:text-[#e8ded5]'}`}
-                            type="button"
                             role="option"
                             id={optionId(index)}
                             tabIndex={-1}
                             aria-selected={language === option}
                             key={option}
                             ref={index === activeIndex ? activeOptionRef : null}
-                            onClick={() => selectOption(index)}
+                            onPointerDown={(event) => {
+                                event.preventDefault()
+                                selectOption(index)
+                            }}
                         >
                             {option}{' '}
                             <span className="ml-2 text-[9px] normal-case tracking-normal opacity-60">
                                 {labels[option]}
                             </span>
-                        </button>
+                        </div>
                     ))}
                 </div>
             )}

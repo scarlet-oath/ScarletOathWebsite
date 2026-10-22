@@ -37,6 +37,8 @@ export function SiteNav({language, setLanguage, t}: SiteNavProps) {
                     language={language}
                     options={languageOptions}
                     labels={languageLabels}
+                    selectionLabel={t.languageSelection}
+                    optionsLabel={t.languageOptions}
                     onChange={setLanguage}
                 />
             </div>

@@ -19,10 +19,23 @@ const labels: Record<Language, string> = {
     de: 'German label',
 }
 
+const pickerLabels = {
+    selectionLabel: 'Language selection',
+    optionsLabel: 'Language options',
+}
+
 function renderPicker(language: Language = 'en') {
     const onChange = vi.fn()
-    render(<LanguagePicker language={language} options={options} labels={labels} onChange={onChange} />)
-    const trigger = screen.getByRole('combobox', {name: 'Language selection'})
+    render(
+        <LanguagePicker
+            language={language}
+            options={options}
+            labels={labels}
+            {...pickerLabels}
+            onChange={onChange}
+        />,
+    )
+    const trigger = screen.getByRole('combobox', {name: pickerLabels.selectionLabel})
     return {trigger, onChange}
 }
 

@@ -27,6 +27,8 @@ export type Translation = {
     homeLabel: string
     socialLabel: string
     launchLabel: string
+    languageSelection: string
+    languageOptions: string
 }
 
 export const translations: Record<Language, Translation> = {
@@ -48,6 +50,8 @@ export const translations: Record<Language, Translation> = {
         homeLabel: 'Scarlet Oath home',
         socialLabel: 'Social links',
         launchLabel: 'Launch information',
+        languageSelection: 'Language selection',
+        languageOptions: 'Language options',
     },
     nl: {
         languageName: 'Nederlands',
@@ -67,6 +71,8 @@ export const translations: Record<Language, Translation> = {
         homeLabel: 'Scarlet Oath home',
         socialLabel: 'Sociale links',
         launchLabel: 'Lanceringsinformatie',
+        languageSelection: 'Taalkeuze',
+        languageOptions: 'Taalopties',
     },
     fr: {
         languageName: 'Français',
@@ -86,6 +92,8 @@ export const translations: Record<Language, Translation> = {
         homeLabel: 'Accueil Scarlet Oath',
         socialLabel: 'Liens sociaux',
         launchLabel: 'Informations de lancement',
+        languageSelection: 'Sélection de la langue',
+        languageOptions: 'Options de langue',
     },
     de: {
         languageName: 'Deutsch',
@@ -105,6 +113,8 @@ export const translations: Record<Language, Translation> = {
         homeLabel: 'Scarlet Oath Startseite',
         socialLabel: 'Social-Media-Links',
         launchLabel: 'Informationen zum Start',
+        languageSelection: 'Sprachauswahl',
+        languageOptions: 'Sprachoptionen',
     },
 }
 

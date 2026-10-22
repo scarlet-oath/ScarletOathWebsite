@@ -26,6 +26,8 @@ const translationKeys: Array<keyof Translation> = [
     'homeLabel',
     'socialLabel',
     'launchLabel',
+    'languageSelection',
+    'languageOptions',
 ]
 
 describe('getInitialLanguage', () => {

@@ -65,5 +65,7 @@ describe('App', () => {
         expect(document.documentElement.lang).toBe('nl')
         expect(window.localStorage.getItem('scarlet-oath-language')).toBe('nl')
         expect(window.location.search).toBe('?lang=nl')
+        await user.click(screen.getByRole('combobox', {name: 'Taalkeuze'}))
+        expect(screen.getByRole('listbox', {name: 'Taalopties'})).toBeInTheDocument()
     })
 })
