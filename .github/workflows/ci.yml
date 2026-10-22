@@ -20,6 +20,8 @@ jobs:
               with:
                   node-version: 26
                   cache: npm
+            - name: Check Node version
+              run: npm run check:node
             - name: Install dependencies
               run: npm ci
             - name: Check formatting

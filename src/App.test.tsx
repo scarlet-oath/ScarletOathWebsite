@@ -46,6 +46,14 @@ describe('App', () => {
         expect(hero?.tagName).toBe('SECTION')
     })
 
+    it('falls back to English and preserves unrelated query parameters for an invalid URL language', () => {
+        window.history.replaceState(null, '', '/?lang=xx&ref=campaign')
+        render(<App />)
+        expect(screen.getByText('The art of')).toBeInTheDocument()
+        expect(document.documentElement.lang).toBe('en')
+        expect(window.location.search).toBe('?ref=campaign')
+    })
+
     it('switches copy and document language when picking Dutch', async () => {
         const user = userEvent.setup()
         render(<App />)

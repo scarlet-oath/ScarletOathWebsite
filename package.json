@@ -7,6 +7,8 @@
         "node": ">=26"
     },
     "scripts": {
+        "preinstall": "node scripts/check-node-version.mjs",
+        "check:node": "node scripts/check-node-version.mjs",
         "dev": "vite",
         "build": "vite build",
         "preview": "vite preview",

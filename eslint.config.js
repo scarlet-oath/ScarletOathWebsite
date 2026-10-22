@@ -6,7 +6,7 @@ import jsxA11yX from 'eslint-plugin-jsx-a11y-x'
 import prettierConfig from 'eslint-config-prettier'
 import globals from 'globals'
 
-const files = ['**/*.{js,jsx,ts,tsx}']
+const files = ['**/*.{js,jsx,mjs,ts,tsx}']
 
 export default tseslint.config(
     {
