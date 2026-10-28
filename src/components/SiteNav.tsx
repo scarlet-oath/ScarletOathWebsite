@@ -17,11 +17,11 @@ export function SiteNav({menuOpen, setMenuOpen}: SiteNavProps) {
     return (
         <header className="relative z-10 border-b border-crimson/70 bg-ink/97">
             <nav
-                className="relative mx-auto flex min-h-16 max-w-7xl items-center justify-between px-5 sm:min-h-20 sm:px-12"
+                className="relative mx-auto flex min-h-16 max-w-7xl items-center justify-between px-5 sm:grid sm:grid-cols-[1fr_auto_1fr] sm:gap-x-3 sm:min-h-20 sm:px-12 md:gap-x-6"
                 aria-label="Main navigation"
             >
                 <a
-                    className="flex min-w-0 items-center gap-3 whitespace-nowrap font-serif text-base tracking-[.2em] sm:min-w-60 sm:gap-4 sm:text-xl sm:tracking-[.26em]"
+                    className="flex min-w-0 items-center gap-3 whitespace-nowrap font-serif text-base tracking-[.2em] sm:min-w-60 sm:gap-4 sm:text-lg sm:tracking-[.26em] md:text-xl"
                     href={`#${HERO_SECTION_ID}`}
                     aria-label="Scarlet Oath home"
                     onClick={() => setMenuOpen(false)}
@@ -49,7 +49,7 @@ export function SiteNav({menuOpen, setMenuOpen}: SiteNavProps) {
                     <span className="sr-only">Menu</span>
                 </button>
                 <div
-                    className={`absolute left-0 right-0 top-16 hidden flex-col items-stretch gap-0 border-b border-crimson/70 bg-ink/98 px-5 pb-5 pt-2.5 sm:top-auto sm:left-1/2 sm:right-auto sm:flex sm:-translate-x-1/2 sm:flex-row sm:items-center sm:gap-12 sm:border-0 sm:bg-transparent sm:p-0 ${menuOpen ? 'flex' : ''}`}
+                    className={`absolute left-0 right-0 top-16 hidden flex-col items-stretch gap-0 border-b border-crimson/70 bg-ink/98 px-5 pb-5 pt-2.5 sm:static sm:flex sm:flex-row sm:items-center sm:gap-3 sm:border-0 sm:bg-transparent sm:p-0 md:gap-8 lg:gap-12 ${menuOpen ? 'flex' : ''}`}
                     id="primary-menu"
                 >
                     <a
