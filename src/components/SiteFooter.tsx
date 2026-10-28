@@ -1,24 +1,41 @@
+// noinspection HtmlUnknownAnchorTarget
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Imports
 // ---------------------------------------------------------------------------------------------------------------------
-import type {Translation} from '../i18n/translations'
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Code
 // ---------------------------------------------------------------------------------------------------------------------
-type SiteFooterProps = {
-    t: Translation
-}
-
 const currentYear = new Date().getFullYear()
 
-export function SiteFooter({t}: SiteFooterProps) {
+export function SiteFooter() {
     return (
-        <footer className="mx-auto flex max-w-310 flex-col gap-3.75 border-t border-white/10 px-5.5 py-6.25 text-[11px] uppercase tracking-widest text-[#a99991] sm:flex-row sm:items-center sm:justify-between sm:px-10.5 sm:pb-9.5">
-            <span className="font-bold text-[#e8ded5]">Scarlet Oath</span>
-            <span>{t.consent}</span>
-            <span>
-                {t.more} <span>&copy; {currentYear} Anna Sas</span>
-            </span>
+        <footer className="border-t border-crimson/70 bg-[#090708] px-6 py-8 text-center sm:px-12">
+            <nav
+                className="mb-6 flex justify-center gap-7 text-xs uppercase tracking-[.18em] text-muted"
+                aria-label="Footer navigation"
+            >
+                <a className="hover:text-crimson" href="#top">
+                    Home
+                </a>
+                <a className="hover:text-crimson" href="#collection">
+                    Vision
+                </a>
+                <a className="hover:text-crimson" href="#about">
+                    About
+                </a>
+                <a className="hover:text-crimson" href="#contact">
+                    Contact
+                </a>
+            </nav>
+            <div className="flex flex-col gap-3 text-xs uppercase tracking-[.12em] text-muted sm:flex-row sm:justify-between">
+                <span>18+ / Consent always.</span>
+                <span>© {currentYear} Anna Sas</span>
+                <a className="hover:text-crimson" href="#top">
+                    Back to top ↑
+                </a>
+            </div>
         </footer>
     )
 }

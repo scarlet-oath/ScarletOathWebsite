@@ -3,32 +3,38 @@
 // ---------------------------------------------------------------------------------------------------------------------
 import {siInstagram} from 'simple-icons'
 import {SocialLink} from './SocialLink'
-import {SocialIcon} from './SocialIcon'
-import type {Translation} from '../i18n/translations'
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Code
 // ---------------------------------------------------------------------------------------------------------------------
-type SocialSectionProps = {
-    t: Translation
-}
-
-export function SocialSection({t}: SocialSectionProps) {
+export function SocialSection() {
     return (
         <section
-            className="mx-auto max-w-310 border-t border-white/10 px-5.5 pb-18.75 pt-6.25 sm:px-10.5 sm:pb-25"
-            aria-label={t.socialLabel}
+            className="mx-auto grid max-w-6xl gap-10 border-t border-crimson/20 px-6 py-20 sm:gap-16 sm:px-12 lg:grid-cols-[1fr_20rem] lg:items-end"
+            id="contact"
+            aria-label="Contact and social links"
         >
-            <div className="flex justify-between text-[10px] uppercase tracking-[.16em] text-[#a99991]">
-                <span className="text-[#c11d35]">{t.findUs}</span>
-                <span>{t.follow}</span>
+            <div>
+                <p className="mb-3 text-xs uppercase tracking-[.25em] text-crimson">Follow the story</p>
+                <h2 className="m-0 mb-4 font-serif text-3xl font-medium leading-tight sm:text-5xl">
+                    Let’s make something <em className="text-crimson">honest.</em>
+                </h2>
+                <p className="m-0 max-w-xl text-sm leading-relaxed text-muted">
+                    For custom pieces, private questions, or a little more information, get in touch.
+                </p>
             </div>
-            <div className="mt-11.25 grid grid-cols-1 gap-4 sm:mt-15.5 sm:grid-cols-2">
+            <div className="flex flex-col gap-5">
                 <SocialLink href="https://www.instagram.com/scarlet.oath.designs/" label="Instagram">
-                    <SocialIcon path={siInstagram.path} />
+                    <svg className="h-5 w-5 shrink-0 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d={siInstagram.path} />
+                    </svg>
                 </SocialLink>
                 <SocialLink href="https://fetlife.com/Scarlet-Oath" label="FetLife">
-                    <SocialIcon src={`${import.meta.env.BASE_URL}fetlife.svg`} />
+                    <img
+                        className="h-5 w-5 shrink-0 object-contain"
+                        src={`${import.meta.env.BASE_URL}fetlife.svg`}
+                        alt=""
+                    />
                 </SocialLink>
             </div>
         </section>

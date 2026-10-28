@@ -1,48 +1,75 @@
+// noinspection HtmlUnknownAnchorTarget
+
 // ---------------------------------------------------------------------------------------------------------------------
 // Imports
 // ---------------------------------------------------------------------------------------------------------------------
-import type {Translation} from '../i18n/translations'
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Code
 // ---------------------------------------------------------------------------------------------------------------------
-type HeroProps = {
-    t: Translation
-}
-
 export const HERO_SECTION_ID = 'top'
 
-export function Hero({t}: HeroProps) {
+export function Hero() {
     return (
         <section
-            className="mx-auto grid min-h-auto max-w-310 grid-cols-1 items-center gap-8 px-5.5 pb-22.5 pt-18.75 sm:grid-cols-2 sm:gap-[7%] sm:px-10.5 sm:pt-15"
+            className="relative isolate grid min-h-140 place-items-center overflow-hidden border-b border-crimson/70 bg-[#090607] sm:min-h-155"
             id={HERO_SECTION_ID}
         >
-            <div className="order-2 self-start sm:order-0 sm:self-auto">
-                <p className="mb-8.5 flex items-center text-[11px] uppercase tracking-[.12em] text-[#a99991]">
-                    <span className="mr-3.25 inline-block h-px w-7 bg-[#c11d35]" /> {t.eyebrow}
-                </p>
-                <h1 className="mb-7.75 font-serif text-[clamp(4rem,18vw,6rem)] font-semibold leading-[.91] tracking-[-.075em] sm:text-[clamp(4.5rem,8.4vw,7.8rem)]">
-                    {t.headlineBefore}
-                    <br />
-                    <em className="text-[#c11d35]">{t.headlineAccent}</em>
-                </h1>
-                <p className="max-w-97.5 text-base leading-[1.7] text-[#a99991] whitespace-pre-line">{t.intro}</p>
-                <span className="mt-5 inline-flex items-center gap-6.25 border-b border-[#87505a] pb-2.5 pt-3.5 text-[11px] uppercase tracking-[.12em]">
-                    {t.release}
-                </span>
-            </div>
-
-            <div className="relative order-1 flex min-h-97.5 flex-col items-center justify-center sm:order-0 sm:min-h-135">
-                <div className="absolute h-[115%] w-[115%] bg-[radial-gradient(ellipse,rgba(193,29,53,.22),rgba(193,29,53,0)_68%)]" />
+            <svg
+                className="hero-atmosphere absolute inset-0 z-[-1] h-full w-full opacity-70"
+                viewBox="0 0 1440 620"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+            >
+                <defs>
+                    <linearGradient id="ribbon-left" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stopColor="#c8102e" stopOpacity=".02" />
+                        <stop offset=".48" stopColor="#c8102e" stopOpacity=".8" />
+                        <stop offset="1" stopColor="#c8102e" stopOpacity=".03" />
+                    </linearGradient>
+                    <linearGradient id="ribbon-right" x1="1" y1="0" x2="0" y2="1">
+                        <stop offset="0" stopColor="#c8102e" stopOpacity=".03" />
+                        <stop offset=".5" stopColor="#c8102e" stopOpacity=".72" />
+                        <stop offset="1" stopColor="#c8102e" stopOpacity=".02" />
+                    </linearGradient>
+                </defs>
+                <path className="ribbon-glow" d="M-90 50C150 120 60 300 390 425c120 45 165 130 50 260" />
+                <path d="M-90 50C150 120 60 300 390 425c120 45 165 130 50 260" stroke="url(#ribbon-left)" />
+                <path d="M-75 12C205 110 80 315 430 448c102 39 140 128 31 244" stroke="url(#ribbon-left)" />
+                <path className="ribbon-glow" d="M1530 36c-235 96-91 265-385 405-126 60-170 147-43 251" />
+                <path d="M1530 36c-235 96-91 265-385 405-126 60-170 147-43 251" stroke="url(#ribbon-right)" />
+                <path d="M1515-2c-269 117-113 274-414 423-110 54-163 143-52 252" stroke="url(#ribbon-right)" />
+            </svg>
+            <div className="flex flex-col items-center px-5 py-6 text-center sm:py-9">
                 <img
-                    className="relative z-10 block w-[78%] max-w-75 drop-shadow-[0_25px_35px_rgba(150,17,37,.15)] sm:max-w-100"
-                    src={`${import.meta.env.BASE_URL}logo.svg`}
+                    className="mb-4 h-24 w-20 object-contain sm:h-28 sm:w-24"
+                    src={`${import.meta.env.BASE_URL}logoNoBorder.svg`}
                     alt="Scarlet Oath emblem"
                 />
-                <span className="relative z-10 mt-5 hidden self-end mr-[8%] text-[10px] uppercase tracking-[.12em] text-[#a99991] sm:block">
-                    Est. 2026 <span className="mx-2 text-[#c11d35]">{'///'}</span> {t.pleasure}
-                </span>
+                <h1 className="m-0 font-serif text-3xl font-semibold leading-none tracking-widest text-ivory sm:text-6xl sm:tracking-[.16em]">
+                    <span className="text-crimson">SCARLET</span> OATH
+                </h1>
+                <p className="my-5 mb-6 text-xs tracking-[.18em] sm:text-sm sm:tracking-[.27em]">
+                    LINGERIE <i className="mx-1.5 text-crimson not-italic sm:mx-2.5">·</i> CLOTHING{' '}
+                    <i className="mx-1.5 text-crimson not-italic sm:mx-2.5">·</i> BDSM GEAR
+                </p>
+                <div className="flex w-11/12 max-w-xs items-center gap-3.5 text-crimson before:h-px before:flex-1 before:bg-crimson after:h-px after:flex-1 after:bg-crimson">
+                    <span className="text-2xl leading-none">✦</span>
+                </div>
+                <p className="my-6 text-sm leading-relaxed tracking-[.13em] sm:text-base sm:tracking-[.2em]">
+                    BECAUSE SOME PROMISES
+                    <br />
+                    ARE MEANT TO BE BROKEN.
+                </p>
+                <a
+                    className="border border-crimson px-5 py-3.5 text-xs tracking-[.17em] transition-colors hover:bg-crimson sm:px-7"
+                    href="#collection"
+                >
+                    DISCOVER THE VISION{' '}
+                    <span className="ml-3 text-lg" aria-hidden="true">
+                        →
+                    </span>
+                </a>
             </div>
         </section>
     )

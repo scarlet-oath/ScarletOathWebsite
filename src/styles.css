@@ -1,15 +1,43 @@
 @import 'tailwindcss';
 
 @theme {
-    --font-sans: 'DM Sans', sans-serif;
+    --color-ink: #080707;
+    --color-surface: #100b0d;
+    --color-crimson: #c8102e;
+    --color-ivory: #e8ded5;
+    --color-muted: #a99991;
     --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'DM Sans', Arial, sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        @apply m-0 min-w-80 bg-ink font-sans text-ivory;
+    }
+    a {
+        @apply text-inherit no-underline;
+    }
+    a:focus-visible,
+    button:focus-visible {
+        @apply outline-2 outline-offset-4 outline-ivory;
+    }
 }
 
-body {
-    margin: 0;
-    min-width: 320px;
+@layer utilities {
+    .hero-atmosphere path {
+        fill: none;
+        stroke-linecap: round;
+    }
+    .hero-atmosphere > path:not(.ribbon-glow) {
+        stroke-width: 1.35;
+    }
+    .hero-atmosphere .ribbon-glow {
+        stroke: #7c071d;
+        stroke-width: 1.0625rem;
+        opacity: 0.13;
+        filter: blur(0.5rem);
+    }
 }
