@@ -13,28 +13,14 @@ import {SiteFooter} from './components/SiteFooter'
 // Code
 // ---------------------------------------------------------------------------------------------------------------------
 function CategoryIcon({kind}: {kind: 'lingerie' | 'clothing' | 'gear' | 'star'}) {
-    return (
-        <svg
-            className="mb-4 h-16 w-20 fill-none stroke-crimson stroke-2 stroke-linecap-round stroke-linejoin-round"
-            viewBox="0 0 100 74"
-            aria-hidden="true"
-        >
-            {kind === 'lingerie' && (
-                <path d="M27 12v13c0 6-9 9-9 19 0 10 9 17 20 17 7 0 12-4 12-12 0 8 5 12 12 12 11 0 20-7 20-17 0-10-9-13-9-19V12M18 44l32 5 32-5M50 49v12" />
-            )}
-            {kind === 'clothing' && (
-                <path d="m34 10-16 8 7 48 25 7 25-7 7-48-16-8-16 10-16-10ZM34 10l5 56M66 10l-5 56M50 20v47M27 29h46" />
-            )}
-            {kind === 'gear' && (
-                <>
-                    <path d="M19 21c0-6 14-10 31-10s31 4 31 10v13c0 6-14 11-31 11s-31-5-31-11V21Z" />
-                    <path d="M19 21c0 6 14 10 31 10s31-4 31-10M50 45v10" />
-                    <circle cx="50" cy="64" r="8" />
-                </>
-            )}
-            {kind === 'star' && <path d="m50 7 6 20 20 6-20 6-6 20-6-20-20-6 20-6 6-20Z" />}
-        </svg>
-    )
+    const iconPath = {
+        lingerie: '/iconBra.svg',
+        clothing: '/iconCorset.svg',
+        gear: '/iconColar.svg',
+        star: '/iconSpecial.svg',
+    }[kind]
+
+    return <img className="mb-4 h-20 w-24 object-contain" src={iconPath} alt="" aria-hidden="true" />
 }
 
 function TrustIcon({kind}: {kind: 'lock' | 'shield' | 'heart' | 'star'}) {
