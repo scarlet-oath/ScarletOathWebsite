@@ -1,47 +1,55 @@
-// ---------------------------------------------------------------------------------------------------------------------
-// Imports
-// ---------------------------------------------------------------------------------------------------------------------
-import {LanguagePicker} from './LanguagePicker'
+import {useEffect} from 'react'
 import {HERO_SECTION_ID} from './Hero'
-import {languageLabels, languageOptions} from '../i18n/translations'
-import type {Language, Translation} from '../i18n/translations'
 
-// ---------------------------------------------------------------------------------------------------------------------
-// Code
-// ---------------------------------------------------------------------------------------------------------------------
 type SiteNavProps = {
-    language: Language
-    setLanguage: (language: Language) => void
-    t: Translation
+    menuOpen: boolean
+    setMenuOpen: (open: boolean) => void
 }
 
-export function SiteNav({language, setLanguage, t}: SiteNavProps) {
+export function SiteNav({menuOpen, setMenuOpen}: SiteNavProps) {
+    useEffect(() => {
+        document.body.classList.toggle('menu-is-open', menuOpen)
+        return () => document.body.classList.remove('menu-is-open')
+    }, [menuOpen])
+
     return (
-        <nav
-            className="relative mx-auto flex max-w-310 items-center justify-between px-5.5 py-6 sm:px-10.5 sm:py-9"
-            aria-label="Main navigation"
-        >
-            <a
-                className="flex items-center gap-3 text-[13px] font-bold uppercase tracking-[.04em]"
-                href={`#${HERO_SECTION_ID}`}
-                aria-label={t.homeLabel}
-            >
-                <img className="block h-9 w-auto" src={`${import.meta.env.BASE_URL}logo.svg`} alt="" />
-                <span>Scarlet Oath</span>
-            </a>
-            <span className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 text-[10px] uppercase tracking-[.08em] text-[#a99991] sm:block sm:text-xs">
-                {t.comingSoon}
-            </span>
-            <div className="flex items-center gap-3 sm:gap-4">
-                <LanguagePicker
-                    language={language}
-                    options={languageOptions}
-                    labels={languageLabels}
-                    selectionLabel={t.languageSelection}
-                    optionsLabel={t.languageOptions}
-                    onChange={setLanguage}
-                />
-            </div>
-        </nav>
+        <header className="site-header">
+            <nav className="nav-inner" aria-label="Main navigation">
+                <a
+                    className="brand-lockup"
+                    href={`#${HERO_SECTION_ID}`}
+                    aria-label="Scarlet Oath home"
+                    onClick={() => setMenuOpen(false)}
+                >
+                    <img src={`${import.meta.env.BASE_URL}logoNoBorder.svg`} alt="" />
+                    <span>
+                        <b>SCARLET</b> OATH<span className="sr-only">Scarlet Oath</span>
+                    </span>
+                </a>
+                <button
+                    className="menu-toggle"
+                    type="button"
+                    aria-expanded={menuOpen}
+                    aria-controls="primary-menu"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                >
+                    <span /> <span /> <span /> <span className="sr-only">Menu</span>
+                </button>
+                <div className={`primary-menu ${menuOpen ? 'is-open' : ''}`} id="primary-menu">
+                    <a className="active" href={`#${HERO_SECTION_ID}`} onClick={() => setMenuOpen(false)}>
+                        HOME
+                    </a>
+                    <a href="#collection" onClick={() => setMenuOpen(false)}>
+                        VISION
+                    </a>
+                    <a href="#about" onClick={() => setMenuOpen(false)}>
+                        ABOUT
+                    </a>
+                    <a href="#contact" onClick={() => setMenuOpen(false)}>
+                        CONTACT
+                    </a>
+                </div>
+            </nav>
+        </header>
     )
 }

@@ -1,24 +1,21 @@
-// ---------------------------------------------------------------------------------------------------------------------
-// Imports
-// ---------------------------------------------------------------------------------------------------------------------
-import type {Translation} from '../i18n/translations'
-// ---------------------------------------------------------------------------------------------------------------------
-// Code
-// ---------------------------------------------------------------------------------------------------------------------
-type SiteFooterProps = {
-    t: Translation
-}
-
 const currentYear = new Date().getFullYear()
-
-export function SiteFooter({t}: SiteFooterProps) {
+export function SiteFooter() {
     return (
-        <footer className="mx-auto flex max-w-310 flex-col gap-3.75 border-t border-white/10 px-5.5 py-6.25 text-[11px] uppercase tracking-widest text-[#a99991] sm:flex-row sm:items-center sm:justify-between sm:px-10.5 sm:pb-9.5">
-            <span className="font-bold text-[#e8ded5]">Scarlet Oath</span>
-            <span>{t.consent}</span>
-            <span>
-                {t.more} <span>&copy; {currentYear} Anna Sas</span>
-            </span>
+        <footer className="site-footer">
+            <div className="footer-rule">
+                <span>✦</span>
+            </div>
+            <nav className="footer-nav" aria-label="Footer navigation">
+                <a href="#top">Home</a>
+                <a href="#collection">Vision</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div className="footer-bottom">
+                <span>18+ / Consent always.</span>
+                <span>© {currentYear} Anna Sas</span>
+                <a href="#top">Back to top ↑</a>
+            </div>
         </footer>
     )
 }
