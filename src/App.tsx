@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import {Heart, LockKeyhole, ShieldCheck, Sparkles} from 'lucide-react'
 import {SiteNav} from './components/SiteNav'
 import {Hero} from './components/Hero'
 import {LaunchSection} from './components/LaunchSection'
@@ -6,52 +7,33 @@ import {SocialSection} from './components/SocialSection'
 import {SiteFooter} from './components/SiteFooter'
 
 function CategoryIcon({kind}: {kind: 'lingerie' | 'clothing' | 'gear' | 'star'}) {
-    if (kind === 'star') {
-        return (
-            <span className="ornament-icon" aria-hidden="true">
-                ✦
-            </span>
-        )
-    }
-
     return (
-        <svg className="category-icon" viewBox="0 0 100 74" aria-hidden="true">
+        <svg
+            className="mb-4 h-16 w-20 fill-none stroke-crimson stroke-2 stroke-linecap-round stroke-linejoin-round"
+            viewBox="0 0 100 74"
+            aria-hidden="true"
+        >
             {kind === 'lingerie' && (
-                <path d="M24 8v17c0 6-8 10-8 19 0 11 10 17 20 17 8 0 14-5 14-13 0 8 6 13 14 13 10 0 20-6 20-17 0-9-8-13-8-19V8M16 43l34 5 34-5M50 49v12" />
+                <path d="M27 12v13c0 6-9 9-9 19 0 10 9 17 20 17 7 0 12-4 12-12 0 8 5 12 12 12 11 0 20-7 20-17 0-10-9-13-9-19V12M18 44l32 5 32-5M50 49v12" />
             )}
             {kind === 'clothing' && (
-                <path d="M34 10 18 17l8 49 24 6 24-6 8-49-16-7-16 9-16-9ZM34 10l4 56M66 10l-4 56M50 19v48M27 27h46" />
+                <path d="m34 10-16 8 7 48 25 7 25-7 7-48-16-8-16 10-16-10ZM34 10l5 56M66 10l-5 56M50 20v47M27 29h46" />
             )}
             {kind === 'gear' && (
                 <>
-                    <ellipse cx="50" cy="23" rx="31" ry="10" />
-                    <path d="M19 23v14c0 6 14 11 31 11s31-5 31-11V23M50 48v9" />
+                    <path d="M19 21c0-6 14-10 31-10s31 4 31 10v13c0 6-14 11-31 11s-31-5-31-11V21Z" />
+                    <path d="M19 21c0 6 14 10 31 10s31-4 31-10M50 45v10" />
                     <circle cx="50" cy="64" r="8" />
                 </>
             )}
+            {kind === 'star' && <path d="m50 7 6 20 20 6-20 6-6 20-6-20-20-6 20-6 6-20Z" />}
         </svg>
     )
 }
 
 function TrustIcon({kind}: {kind: 'lock' | 'shield' | 'heart' | 'star'}) {
-    if (kind === 'star')
-        return (
-            <span className="trust-star" aria-hidden="true">
-                ✦
-            </span>
-        )
-    return (
-        <svg className="trust-icon" viewBox="0 0 32 32" aria-hidden="true">
-            {kind === 'lock' && (
-                <>
-                    <rect x="7" y="14" width="18" height="14" rx="1" />
-                    <path d="M11 14V9a5 5 0 0 1 10 0v5M16 20v4" />
-                </>
-            )}
-            {kind === 'shield' && <path d="M16 3 26 7v8c0 7-4 11-10 14C10 26 6 22 6 15V7l10-4ZM11 16l3 3 7-7" />}
-            {kind === 'heart' && <path d="M16 27S5 20 5 12a6 6 0 0 1 11-3 6 6 0 0 1 11 3c0 8-11 15-11 15Z" />}
-        </svg>
-    )
+    const Icon = {lock: LockKeyhole, shield: ShieldCheck, heart: Heart, star: Sparkles}[kind]
+    return <Icon className="h-7 w-7 text-crimson" strokeWidth={1.7} aria-hidden="true" />
 }
 
 const categories = [
@@ -89,50 +71,77 @@ export function App() {
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (
-        <div className="site-shell">
+        <div className="min-h-screen overflow-hidden bg-ink">
             <SiteNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
             <main>
                 <Hero />
-                <section className="category-section" id="collection" aria-labelledby="collection-title">
-                    <div className="section-intro">
-                        <p className="section-kicker">The world of Scarlet Oath</p>
-                        <h2 id="collection-title">
+                <section
+                    className="border-b border-crimson/70 px-5 py-12 sm:px-12 sm:py-14"
+                    id="collection"
+                    aria-labelledby="collection-title"
+                >
+                    <div className="mb-8 text-center">
+                        <p className="mb-3 text-xs uppercase tracking-[.25em] text-crimson">
+                            The world of Scarlet Oath
+                        </p>
+                        <h2
+                            className="m-0 font-serif text-3xl font-medium leading-tight tracking-[.02em] sm:text-5xl"
+                            id="collection-title"
+                        >
                             Made for the <em>unspoken.</em>
                         </h2>
                     </div>
-                    <div className="category-grid">
+                    <div className="mx-auto grid max-w-7xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
                         {categories.map((category) => (
-                            <article className="category-card" key={category.title}>
-                                <div className="card-corner card-corner-top" />
-                                <div className="card-corner card-corner-bottom" />
+                            <article
+                                className="relative flex min-h-64 flex-col items-center border border-crimson/70 bg-ink/50 px-3 py-7 text-center transition-colors hover:border-crimson hover:bg-surface sm:min-h-72 sm:px-6 sm:py-8"
+                                key={category.title}
+                            >
+                                <div className="absolute left-0 top-0 h-2.5 w-2.5 border-b border-r border-crimson bg-ink" />
+                                <div className="absolute bottom-0 right-0 h-2.5 w-2.5 border-l border-t border-crimson bg-ink" />
                                 <CategoryIcon kind={category.icon} />
-                                <h3>{category.title}</h3>
-                                <div className="mini-divider">
-                                    <span>✦</span>
+                                <h3 className="mb-3 font-serif text-sm font-medium tracking-[.1em] sm:text-lg">
+                                    {category.title}
+                                </h3>
+                                <div className="mb-4 flex w-36 items-center gap-2 text-crimson before:h-px before:flex-1 before:bg-crimson after:h-px after:flex-1 after:bg-crimson">
+                                    <span className="text-base">✦</span>
                                 </div>
-                                <p>{category.description}</p>
-                                <a href={category.href}>
+                                <p className="mb-5 min-h-10 max-w-48 text-xs leading-relaxed text-muted sm:text-sm">
+                                    {category.description}
+                                </p>
+                                <a
+                                    className="mt-auto text-xs font-bold tracking-[.18em] text-crimson"
+                                    href={category.href}
+                                >
                                     {category.action} <span aria-hidden="true">→</span>
                                 </a>
                             </article>
                         ))}
                     </div>
                 </section>
-                <section className="trust-section" aria-labelledby="trust-title">
+                <section
+                    className="border-b border-crimson/70 bg-gradient-to-r from-crimson/[.09] via-transparent to-crimson/[.09] px-3 py-8 sm:px-12"
+                    aria-labelledby="trust-title"
+                >
                     <h2 className="sr-only" id="trust-title">
                         Our values
                     </h2>
-                    <div className="trust-grid">
+                    <div className="mx-auto grid max-w-7xl grid-cols-2 gap-y-7 lg:grid-cols-4 lg:gap-y-0">
                         {[
                             ['lock', 'DISCREET PACKAGING', 'Your privacy matters.'],
                             ['shield', 'PREMIUM QUALITY', 'Made to last.'],
                             ['heart', 'INCLUSIVE & DIVERSE', 'All bodies. All desires.'],
                             ['star', 'CRAFTED WITH CARE', 'For your most honest self.'],
                         ].map(([icon, title, copy]) => (
-                            <div className="trust-item" key={title}>
+                            <div
+                                className="flex min-h-24 flex-col items-center border-r border-crimson/70 px-2 text-center first:lg:border-r last:border-0 even:lg:border-r-0 lg:px-6 odd:border-r"
+                                key={title}
+                            >
                                 <TrustIcon kind={icon as 'lock' | 'shield' | 'heart' | 'star'} />
-                                <h3>{title}</h3>
-                                <p>{copy}</p>
+                                <h3 className="my-2.5 font-serif text-xs font-medium tracking-[.12em] lg:tracking-[.2em]">
+                                    {title}
+                                </h3>
+                                <p className="m-0 text-xs text-muted">{copy}</p>
                             </div>
                         ))}
                     </div>

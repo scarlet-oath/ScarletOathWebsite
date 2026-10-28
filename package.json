@@ -21,9 +21,9 @@
         "test:watch": "vitest"
     },
     "dependencies": {
+        "lucide-react": "^1.63.0",
         "react": "^19.3.1",
-        "react-dom": "^19.3.1",
-        "simple-icons": "^16.35.0"
+        "react-dom": "^19.3.1"
     },
     "devDependencies": {
         "@eslint-react/eslint-plugin": "^5.28.2",

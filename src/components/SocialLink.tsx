@@ -11,12 +11,12 @@ type SocialLinkProps = {href: string; label: string; children: ReactNode}
 export function SocialLink({href, label, children}: SocialLinkProps) {
     return (
         <a
-            className="group flex items-center justify-between border-b border-white/15 pb-4 text-2xl font-serif text-[#e8ded5] transition-colors hover:border-[#c11d35] hover:text-[#c11d35]"
+            className="group flex items-center justify-between border-b border-crimson/45 py-2.5 text-2xl font-serif text-ivory transition-colors hover:text-crimson"
             href={href}
             target="_blank"
             rel="noreferrer"
         >
-            <span className="flex items-center gap-6">
+            <span className="flex items-center gap-4">
                 {children}
                 {label}
             </span>

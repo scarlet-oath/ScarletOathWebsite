@@ -1,10 +1,7 @@
 import {useEffect} from 'react'
 import {HERO_SECTION_ID} from './Hero'
 
-type SiteNavProps = {
-    menuOpen: boolean
-    setMenuOpen: (open: boolean) => void
-}
+type SiteNavProps = {menuOpen: boolean; setMenuOpen: (open: boolean) => void}
 
 export function SiteNav({menuOpen, setMenuOpen}: SiteNavProps) {
     useEffect(() => {
@@ -12,40 +9,61 @@ export function SiteNav({menuOpen, setMenuOpen}: SiteNavProps) {
         return () => document.body.classList.remove('menu-is-open')
     }, [menuOpen])
 
+    const linkClass =
+        'relative py-3.5 text-xs tracking-[.16em] text-ivory transition-colors hover:text-crimson sm:py-7 sm:pb-6 sm:pt-7'
+
     return (
-        <header className="site-header">
-            <nav className="nav-inner" aria-label="Main navigation">
+        <header className="relative z-10 border-b border-crimson/70 bg-ink/[.97]">
+            <nav
+                className="relative mx-auto flex min-h-16 max-w-7xl items-center justify-between px-5 sm:min-h-20 sm:px-12"
+                aria-label="Main navigation"
+            >
                 <a
-                    className="brand-lockup"
+                    className="flex min-w-0 items-center gap-3 whitespace-nowrap font-serif text-base tracking-[.2em] sm:min-w-60 sm:gap-4 sm:text-xl sm:tracking-[.26em]"
                     href={`#${HERO_SECTION_ID}`}
                     aria-label="Scarlet Oath home"
                     onClick={() => setMenuOpen(false)}
                 >
-                    <img src={`${import.meta.env.BASE_URL}logoNoBorder.svg`} alt="" />
+                    <img
+                        className="h-9 w-7 object-contain sm:h-11 sm:w-9"
+                        src={`${import.meta.env.BASE_URL}logoNoBorder.svg`}
+                        alt=""
+                    />
                     <span>
-                        <b>SCARLET</b> OATH<span className="sr-only">Scarlet Oath</span>
+                        <b className="font-medium text-crimson">SCARLET</b> OATH
+                        <span className="sr-only">Scarlet Oath</span>
                     </span>
                 </a>
                 <button
-                    className="menu-toggle"
+                    className="order-2 ml-auto mr-2 flex h-10 w-10 flex-col justify-around border-0 bg-transparent p-2.5 sm:hidden"
                     type="button"
                     aria-expanded={menuOpen}
                     aria-controls="primary-menu"
                     onClick={() => setMenuOpen(!menuOpen)}
                 >
-                    <span /> <span /> <span /> <span className="sr-only">Menu</span>
+                    <span className="h-px w-6 bg-crimson" />
+                    <span className="h-px w-6 bg-crimson" />
+                    <span className="h-px w-6 bg-crimson" />
+                    <span className="sr-only">Menu</span>
                 </button>
-                <div className={`primary-menu ${menuOpen ? 'is-open' : ''}`} id="primary-menu">
-                    <a className="active" href={`#${HERO_SECTION_ID}`} onClick={() => setMenuOpen(false)}>
+                <div
+                    className={`absolute left-0 right-0 top-16 hidden flex-col items-stretch gap-0 border-b border-crimson/70 bg-ink/[.98] px-5 pb-5 pt-2.5 sm:top-auto sm:left-1/2 sm:right-auto sm:flex sm:-translate-x-1/2 sm:flex-row sm:items-center sm:gap-12 sm:border-0 sm:bg-transparent sm:p-0 ${menuOpen ? 'flex' : ''}`}
+                    id="primary-menu"
+                >
+                    <a
+                        className={`${linkClass} sm:after:absolute sm:after:bottom-4 sm:after:left-0 sm:after:right-0 sm:after:h-px sm:after:bg-crimson`}
+                        href={`#${HERO_SECTION_ID}`}
+                        onClick={() => setMenuOpen(false)}
+                    >
                         HOME
                     </a>
-                    <a href="#collection" onClick={() => setMenuOpen(false)}>
+                    <a className={linkClass} href="#collection" onClick={() => setMenuOpen(false)}>
                         VISION
                     </a>
-                    <a href="#about" onClick={() => setMenuOpen(false)}>
+                    <a className={linkClass} href="#about" onClick={() => setMenuOpen(false)}>
                         ABOUT
                     </a>
-                    <a href="#contact" onClick={() => setMenuOpen(false)}>
+                    <a className={linkClass} href="#contact" onClick={() => setMenuOpen(false)}>
                         CONTACT
                     </a>
                 </div>
