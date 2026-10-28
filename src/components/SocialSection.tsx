@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------------------------------------------------
 // Imports
 // ---------------------------------------------------------------------------------------------------------------------
-import {Camera, MessageCircle} from 'lucide-react'
+import {siInstagram} from 'simple-icons'
 import {SocialLink} from './SocialLink'
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -25,10 +25,16 @@ export function SocialSection() {
             </div>
             <div className="flex flex-col gap-5">
                 <SocialLink href="https://www.instagram.com/scarlet.oath.designs/" label="Instagram">
-                    <Camera className="h-5 w-5 shrink-0" strokeWidth={1.7} aria-hidden="true" />
+                    <svg className="h-5 w-5 shrink-0 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d={siInstagram.path} />
+                    </svg>
                 </SocialLink>
                 <SocialLink href="https://fetlife.com/Scarlet-Oath" label="FetLife">
-                    <MessageCircle className="h-5 w-5 shrink-0" strokeWidth={1.7} aria-hidden="true" />
+                    <img
+                        className="h-5 w-5 shrink-0 object-contain"
+                        src={`${import.meta.env.BASE_URL}fetlife.svg`}
+                        alt=""
+                    />
                 </SocialLink>
             </div>
         </section>

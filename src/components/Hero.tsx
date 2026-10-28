@@ -53,7 +53,7 @@ export function Hero() {
                     LINGERIE <i className="mx-1.5 text-crimson not-italic sm:mx-2.5">·</i> CLOTHING{' '}
                     <i className="mx-1.5 text-crimson not-italic sm:mx-2.5">·</i> BDSM GEAR
                 </p>
-                <div className="flex w-11/12 max-w-xs items-center gap-3.5 text-crimson before:h-px before:flex-1 before:bg-crimson">
+                <div className="flex w-11/12 max-w-xs items-center gap-3.5 text-crimson before:h-px before:flex-1 before:bg-crimson after:h-px after:flex-1 after:bg-crimson">
                     <span className="text-2xl leading-none">✦</span>
                 </div>
                 <p className="my-6 text-sm leading-relaxed tracking-[.13em] sm:text-base sm:tracking-[.2em]">
