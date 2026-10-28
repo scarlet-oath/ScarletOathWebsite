@@ -2,9 +2,6 @@ const currentYear = new Date().getFullYear()
 export function SiteFooter() {
     return (
         <footer className="site-footer">
-            <div className="footer-rule">
-                <span>✦</span>
-            </div>
             <nav className="footer-nav" aria-label="Footer navigation">
                 <a href="#top">Home</a>
                 <a href="#collection">Vision</a>

@@ -558,14 +558,6 @@ button:focus-visible {
 .footer-nav a:hover {
     color: var(--crimson);
 }
-.footer-rule {
-    max-width: 480px;
-    margin: 26px auto 20px;
-    display: flex;
-    gap: 13px;
-    align-items: center;
-    color: var(--crimson);
-}
 .footer-rule:before,
 .footer-rule:after {
     content: '';
