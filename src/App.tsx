@@ -13,14 +13,21 @@ import {SiteFooter} from './components/SiteFooter'
 // Code
 // ---------------------------------------------------------------------------------------------------------------------
 function CategoryIcon({kind}: {kind: 'lingerie' | 'clothing' | 'gear' | 'star'}) {
-    const iconPath = {
-        lingerie: '/iconBra.svg',
-        clothing: '/iconCorset.svg',
-        gear: '/iconColar.svg',
-        star: '/iconSpecial.svg',
+    const iconFile = {
+        lingerie: 'iconBra.svg',
+        clothing: 'iconCorset.svg',
+        gear: 'iconColar.svg',
+        star: 'iconSpecial.svg',
     }[kind]
 
-    return <img className="mb-4 h-20 w-24 object-contain" src={iconPath} alt="" aria-hidden="true" />
+    return (
+        <img
+            className="mb-4 h-20 w-24 object-contain"
+            src={`${import.meta.env.BASE_URL}assets/${iconFile}`}
+            alt=""
+            aria-hidden="true"
+        />
+    )
 }
 
 function TrustIcon({kind}: {kind: 'lock' | 'shield' | 'heart' | 'star'}) {
