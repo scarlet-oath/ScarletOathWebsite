@@ -1,3 +1,6 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Imports
+// ---------------------------------------------------------------------------------------------------------------------
 import {useState} from 'react'
 import {Heart, LockKeyhole, ShieldCheck, Sparkles} from 'lucide-react'
 import {SiteNav} from './components/SiteNav'
@@ -6,6 +9,9 @@ import {LaunchSection} from './components/LaunchSection'
 import {SocialSection} from './components/SocialSection'
 import {SiteFooter} from './components/SiteFooter'
 
+// ---------------------------------------------------------------------------------------------------------------------
+// Code
+// ---------------------------------------------------------------------------------------------------------------------
 function CategoryIcon({kind}: {kind: 'lingerie' | 'clothing' | 'gear' | 'star'}) {
     return (
         <svg

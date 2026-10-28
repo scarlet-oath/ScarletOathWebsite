@@ -1,3 +1,5 @@
+// noinspection HtmlUnknownAnchorTarget
+
 import {useEffect} from 'react'
 import {HERO_SECTION_ID} from './Hero'
 
@@ -13,7 +15,7 @@ export function SiteNav({menuOpen, setMenuOpen}: SiteNavProps) {
         'relative py-3.5 text-xs tracking-[.16em] text-ivory transition-colors hover:text-crimson sm:py-7 sm:pb-6 sm:pt-7'
 
     return (
-        <header className="relative z-10 border-b border-crimson/70 bg-ink/[.97]">
+        <header className="relative z-10 border-b border-crimson/70 bg-ink/97">
             <nav
                 className="relative mx-auto flex min-h-16 max-w-7xl items-center justify-between px-5 sm:min-h-20 sm:px-12"
                 aria-label="Main navigation"
@@ -47,7 +49,7 @@ export function SiteNav({menuOpen, setMenuOpen}: SiteNavProps) {
                     <span className="sr-only">Menu</span>
                 </button>
                 <div
-                    className={`absolute left-0 right-0 top-16 hidden flex-col items-stretch gap-0 border-b border-crimson/70 bg-ink/[.98] px-5 pb-5 pt-2.5 sm:top-auto sm:left-1/2 sm:right-auto sm:flex sm:-translate-x-1/2 sm:flex-row sm:items-center sm:gap-12 sm:border-0 sm:bg-transparent sm:p-0 ${menuOpen ? 'flex' : ''}`}
+                    className={`absolute left-0 right-0 top-16 hidden flex-col items-stretch gap-0 border-b border-crimson/70 bg-ink/98 px-5 pb-5 pt-2.5 sm:top-auto sm:left-1/2 sm:right-auto sm:flex sm:-translate-x-1/2 sm:flex-row sm:items-center sm:gap-12 sm:border-0 sm:bg-transparent sm:p-0 ${menuOpen ? 'flex' : ''}`}
                     id="primary-menu"
                 >
                     <a

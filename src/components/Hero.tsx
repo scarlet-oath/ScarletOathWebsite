@@ -1,3 +1,12 @@
+// noinspection HtmlUnknownAnchorTarget
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Imports
+// ---------------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Code
+// ---------------------------------------------------------------------------------------------------------------------
 export const HERO_SECTION_ID = 'top'
 
 export function Hero() {
@@ -37,14 +46,14 @@ export function Hero() {
                     src={`${import.meta.env.BASE_URL}logoNoBorder.svg`}
                     alt="Scarlet Oath emblem"
                 />
-                <h1 className="m-0 font-serif text-3xl font-semibold leading-none tracking-[.1em] text-ivory sm:text-6xl sm:tracking-[.16em]">
+                <h1 className="m-0 font-serif text-3xl font-semibold leading-none tracking-widest text-ivory sm:text-6xl sm:tracking-[.16em]">
                     <span className="text-crimson">SCARLET</span> OATH
                 </h1>
                 <p className="my-5 mb-6 text-xs tracking-[.18em] sm:text-sm sm:tracking-[.27em]">
                     LINGERIE <i className="mx-1.5 text-crimson not-italic sm:mx-2.5">·</i> CLOTHING{' '}
                     <i className="mx-1.5 text-crimson not-italic sm:mx-2.5">·</i> BDSM GEAR
                 </p>
-                <div className="flex w-11/12 max-w-xs items-center gap-3.5 text-crimson before:h-px before:flex-1 before:bg-crimson after:h-px after:flex-1 after:bg-crimson">
+                <div className="flex w-11/12 max-w-xs items-center gap-3.5 text-crimson before:h-px before:flex-1 before:bg-crimson">
                     <span className="text-2xl leading-none">✦</span>
                 </div>
                 <p className="my-6 text-sm leading-relaxed tracking-[.13em] sm:text-base sm:tracking-[.2em]">
