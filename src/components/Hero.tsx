@@ -43,7 +43,7 @@ export function Hero() {
             <div className="flex flex-col items-center px-5 py-6 text-center sm:py-9">
                 <img
                     className="mb-4 h-24 w-20 object-contain sm:h-28 sm:w-24"
-                    src={`${import.meta.env.BASE_URL}logoNoBorder.svg`}
+                    src={`${import.meta.env.BASE_URL}assets/logoNoBorder.svg`}
                     alt="Scarlet Oath emblem"
                 />
                 <h1 className="m-0 font-serif text-3xl font-semibold leading-none tracking-widest text-ivory sm:text-6xl sm:tracking-[.16em]">

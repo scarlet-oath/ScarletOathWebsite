@@ -28,7 +28,7 @@ export function SiteNav({menuOpen, setMenuOpen}: SiteNavProps) {
                 >
                     <img
                         className="h-9 w-7 object-contain sm:h-11 sm:w-9"
-                        src={`${import.meta.env.BASE_URL}logoNoBorder.svg`}
+                        src={`${import.meta.env.BASE_URL}assets/logoNoBorder.svg`}
                         alt=""
                     />
                     <span>

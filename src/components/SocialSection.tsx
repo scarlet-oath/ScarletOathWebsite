@@ -32,7 +32,7 @@ export function SocialSection() {
                 <SocialLink href="https://fetlife.com/Scarlet-Oath" label="FetLife">
                     <img
                         className="h-5 w-5 shrink-0 object-contain"
-                        src={`${import.meta.env.BASE_URL}fetlife.svg`}
+                        src={`${import.meta.env.BASE_URL}assets/fetlife.svg`}
                         alt=""
                     />
                 </SocialLink>
