@@ -25,19 +25,3 @@
         @apply outline-2 outline-offset-4 outline-ivory;
     }
 }
-
-@layer utilities {
-    .hero-atmosphere path {
-        fill: none;
-        stroke-linecap: round;
-    }
-    .hero-atmosphere > path:not(.ribbon-glow) {
-        stroke-width: 1.35;
-    }
-    .hero-atmosphere .ribbon-glow {
-        stroke: #7c071d;
-        stroke-width: 1.0625rem;
-        opacity: 0.13;
-        filter: blur(0.5rem);
-    }
-}
